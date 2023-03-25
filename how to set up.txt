@@ -1,0 +1,7 @@
+1) install npm: https://nodejs.org/en/download
+2) install ng: https://angular.io/cli
+3) build project: ng build
+3.1) if you get error like: scripts not allowed on your system --> delete C:\Users\Username\AppData\Roaming\npm\ng.ps1
+3.2) or you get error: Node packages may not be installed. Try installing with 'npm install'. --> npm install
+4) start website locally: ng serve
+5) open in webbrowser: http://localhost:4200/
