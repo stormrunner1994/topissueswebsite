@@ -1,0 +1,5 @@
+-world top issues list
+-rate the issue based on the relevance
+-what others feel avout the isusues
+-DB -> likes or dislike
+-vote up/down link to issues
