@@ -1,5 +1,6 @@
 ﻿@using BlazorApp1.Models;
 @using BlazorApp1.wwwroot.Classes;
+@inject Application Application;
 @page "/pageTopic"
 
 <PageTitle>Thema</PageTitle>
@@ -21,8 +22,6 @@
     </EditForm>
 </div> 
 
-
-
 <button disabled="@disabled" class="btn btn-primary" @onclick="SavePost">Posten</button>
 <br />
 <button  class="btn btn-primary" @onclick="DoPetition">Starte eine neue Petition oder trete einer Petition bei</button>
@@ -31,31 +30,13 @@
 
     private bool disabled = false;
     private Page Page = new Page();
-    private Postgres Database = new Postgres(false);
-    private Application? Application;
 
-    public PageTopic()
-    {
-    }
-
-
-    Task ConnectToDb()
-    {
-        string error = "";
-        bool connected = Database.Connect(ref error);
-        return Task.CompletedTask;
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-        await ConnectToDb();
-    }
 
     private void SavePost()
     {
         Post newPost = new Post(-1, Page.Title, Page.Content, "Klimawandel", "Runner", -1,
         0, 0, DateTime.Now, DateTime.Now);
-        bool success = Database.InsertPost(newPost);
+        bool success = Application.Database.InsertPost(newPost);
         Page.Title = "";
         Page.Content = "";
     }

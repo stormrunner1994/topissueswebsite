@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Content Include="Database.txt" />
+    <Content Include="Models\Application.cs" />
   </ItemGroup>
 
   <ItemGroup>

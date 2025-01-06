@@ -1,4 +1,5 @@
 ﻿@using BlazorApp1.wwwroot.Classes;
+@using BlazorApp1.Models;
 @page "/"
 
 <PageTitle>Startseite</PageTitle>
@@ -11,18 +12,5 @@
 
 @code
 {
-
-    Task SomeStartupTask()
-    {
-        string error = "";
-        bool connected = Applic Database.Connect(ref error);       
-        return Task.CompletedTask;
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-        await SomeStartupTask();
-    }
-
 
 }
