@@ -234,8 +234,11 @@ namespace Postgres_
             //    "CREATE TABLE Users (Id SERIAL PRIMARY KEY);
             //    INSERT INTO predefinedelements(SubjectId, Content, ContentGerman, subject, SubjectGerman) VALUES(5,'Halal','Halal','EatingBehavior','Essverhalten');"
 
-            return "DROP TABLE IF EXISTS Users;"
+            return "DROP TABLE IF EXISTS Users;"+
+                "DROP TABLE IF EXISTS Posts;"
+
             + "CREATE TABLE Users (Id SERIAL PRIMARY KEY);"
+            + "CREATE TABLE Posts (Id SERIAL PRIMARY KEY, Title varchar(255), Content Text);"
             + "INSERT INTO Users(Id) VALUES(2);";
         }
 
@@ -437,6 +440,15 @@ namespace Postgres_
             long per = tt / count;
 
             return new Response(true, sw.ElapsedMilliseconds);
+        }
+
+        public bool InsertPost(string title, string content)
+        {
+            string query = "INSERT INTO Posts (title, content) VALUES('" + title + "','" + content + "');";
+
+            Response res = ExecuteInsertQuery(query);
+            string error = "";
+            return res.GetBool(ref error);
         }
 
         private Response ExecuteInsertQuery(string query)

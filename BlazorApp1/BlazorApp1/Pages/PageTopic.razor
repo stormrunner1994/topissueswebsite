@@ -1,0 +1,49 @@
+﻿@page "/pageTopic"
+
+<PageTitle>Topic</PageTitle>
+
+
+<button class="btn btn-primary" @onclick="ClickedWithSource">Mit Quelle</button>
+
+<button class="btn btn-primary" @onclick="ClickedWithoutSource">Ohne Quelle</button>
+
+<h1>Topic</h1>
+<p>Titel:</p><br />
+<textarea @bind=title></textarea>
+<p>Inhalt:</p><br />
+<textarea @bind=content></textarea>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="Post">Posten</button>
+
+@code {
+    private int currentCount = 0;
+    private string title = "";
+    private string content = "";
+
+    private void Post()
+    {
+        Postgres_.Postgres db = new Postgres_.Postgres(false);
+        string error = "";
+        db.Connect(ref error);
+      bool success =  db.InsertPost(title, content);
+
+        currentCount++;
+       
+    }
+
+    private void ClickedWithSource()
+    {
+
+        currentCount++;
+
+    }
+
+    private void ClickedWithoutSource()
+    {
+
+        currentCount++;
+
+    }
+}
