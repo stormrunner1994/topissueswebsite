@@ -14,9 +14,19 @@
         public DateTime LastModificationDate = DateTime.MinValue;
         public List<Post> Reactions = new List<Post>();
 
-        public Post()
+        public Post(int id, string title, string content, string topic, string author, int reactedToPostId,
+            int likes, int dislikes, DateTime creationdate, DateTime lastModificationDate)
         {
-
+            Id = id;
+            Title = title;
+            Content = content;
+            Topic = topic;
+            Author = author;
+            Likes = likes;
+            Dislikes = dislikes;
+            ReactedToPostId = reactedToPostId;
+                CreationDate = creationdate;
+            LastModificationDate = lastModificationDate;
         }
     }
 }

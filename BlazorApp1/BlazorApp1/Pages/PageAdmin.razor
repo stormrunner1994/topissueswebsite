@@ -3,12 +3,7 @@
 
 <PageTitle>Admin</PageTitle>
 
-<h1>Mein Profil</h1>
-
-<p>Mein Name ist Runner</p><br/>
-<p>Ich habe 2 Posts erstellt</p><br />
-<p>Registriert seit 06.01.2025</p>
-
+<h1>Admin</h1>
 
 <button class="btn btn-primary" @onclick="ResetDb">Datenbank zurücksetzen</button>
 
@@ -35,6 +30,4 @@
         file = file.Replace("\n", "").Replace("\r", "");
         Response res = Database.ExecuteResetDBQuery(file);
     }   
-
-
 }

@@ -2,7 +2,7 @@
 @using BlazorApp1.wwwroot.Classes;
 @page "/pageTopic"
 
-<PageTitle>Topic</PageTitle>
+<PageTitle>Thema</PageTitle>
 
 
 <button class="btn btn-primary" @onclick="ClickedWithSource">Mit Quelle</button>
@@ -24,11 +24,20 @@
 
 
 <button disabled="@disabled" class="btn btn-primary" @onclick="SavePost">Posten</button>
+<br />
+<button  class="btn btn-primary" @onclick="DoPetition">Starte eine neue Petition oder trete einer Petition bei</button>
 
 @code {
+
     private bool disabled = false;
     private Page Page = new Page();
     private Postgres Database = new Postgres(false);
+    private Application? Application;
+
+    public PageTopic()
+    {
+    }
+
 
     Task ConnectToDb()
     {
@@ -44,9 +53,15 @@
 
     private void SavePost()
     {
-        bool success = Database.InsertPost(Page.Title, Page.Content);
+        Post newPost = new Post(-1, Page.Title, Page.Content, "Klimawandel", "Runner", -1,
+        0, 0, DateTime.Now, DateTime.Now);
+        bool success = Database.InsertPost(newPost);
         Page.Title = "";
         Page.Content = "";
+    }
+
+    private void DoPetition()
+    {
     }
 
     // private void TitleChanged()

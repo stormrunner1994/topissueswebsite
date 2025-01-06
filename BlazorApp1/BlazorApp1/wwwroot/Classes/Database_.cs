@@ -1,5 +1,5 @@
-﻿using Npgsql;
-using System.Collections.Generic;
+﻿using BlazorApp1.Models;
+using Npgsql;
 using System.Diagnostics;
 
 namespace BlazorApp1.wwwroot.Classes
@@ -428,9 +428,9 @@ namespace BlazorApp1.wwwroot.Classes
             return new Response(true, sw.ElapsedMilliseconds);
         }
 
-        public bool InsertPost(string title, string content)
+        public bool InsertPost(Post post)
         {
-            string query = "INSERT INTO Posts (title, content) VALUES('" + title + "','" + content + "');";
+            string query = "INSERT INTO Posts (title, content) VALUES('" + post.Title + "','" + post.Content + "');";
 
             Response res = ExecuteInsertQuery(query);
             string error = "";
