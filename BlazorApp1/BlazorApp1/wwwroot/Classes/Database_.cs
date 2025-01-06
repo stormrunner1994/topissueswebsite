@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace Postgres_
+namespace BlazorApp1.wwwroot.Classes
 {
     public enum KnownInfo
     {
@@ -48,7 +48,7 @@ namespace Postgres_
         public Response(object Object, int ErrorId, long DurationInMs)
         {
             this.DurationInMs = DurationInMs;
-            this.ErrorIds = new List<int>() { ErrorId };
+            ErrorIds = new List<int>() { ErrorId };
             this.Object = Object;
             Date = DateTime.Now;
         }
@@ -88,7 +88,7 @@ namespace Postgres_
             return new DateTime();
         }
 
-       
+
 
         public List<List<string>>? GetRows()
         {
@@ -227,24 +227,10 @@ namespace Postgres_
             return response;
         }
 
-        private string GetResetQuery()
+       
+
+        public Response ExecuteResetDBQuery(string query)
         {
-            //return "DROP TABLE IF EXISTS Reports;" +
-            //    "CREATE TABLE Reports (Id SERIAL PRIMARY KEY, FromUserId int, ToUserId int,Date Timestamp, Reason varchar(255),Description Text);" +
-            //    "CREATE TABLE Users (Id SERIAL PRIMARY KEY);
-            //    INSERT INTO predefinedelements(SubjectId, Content, ContentGerman, subject, SubjectGerman) VALUES(5,'Halal','Halal','EatingBehavior','Essverhalten');"
-
-            return "DROP TABLE IF EXISTS Users;"+
-                "DROP TABLE IF EXISTS Posts;"
-
-            + "CREATE TABLE Users (Id SERIAL PRIMARY KEY);"
-            + "CREATE TABLE Posts (Id SERIAL PRIMARY KEY, Title varchar(255), Content Text);"
-            + "INSERT INTO Users(Id) VALUES(2);";
-        }
-
-        public Response ExecuteResetDBQuery()
-        {
-            string query = GetResetQuery();
             Stopwatch sw = Stopwatch.StartNew();
 
             Response response = new Response(true, 0);
@@ -314,7 +300,7 @@ namespace Postgres_
                 DateTime end = LastJobs.OrderByDescending(i => i.Date).First().Date;
                 double ms = (end - start).TotalMilliseconds;
                 long sum = LastJobs.Sum(i => i.Duration);
-                double percent = (sum / ms) * 100;
+                double percent = sum / ms * 100;
 
                 if (failed.Count > 0)
                 {
@@ -330,15 +316,15 @@ namespace Postgres_
             DateTime end = LastJobs.OrderByDescending(i => i.Date).First().Date;
             double ms = (end - start).TotalMilliseconds;
             long sum = LastJobs.Sum(i => i.Duration);
-            double percent = (sum / ms) * 100;
-            return (sum / 1000) + "sec/" + Math.Round((ms / 1000), 0) + "sec  " + Math.Round(percent, 2) + "%";
+            double percent = sum / ms * 100;
+            return sum / 1000 + "sec/" + Math.Round(ms / 1000, 0) + "sec  " + Math.Round(percent, 2) + "%";
         }
 
         public List<string> GetLastJobs(int minDuration, int number = 30)
         {
             List<string> jobs = new List<string>();
             int a = LastJobs.Count - 1;
-            while(jobs.Count < number && a != -1)
+            while (jobs.Count < number && a != -1)
             {
                 if (LastJobs[a].Duration > minDuration)
                     jobs.Add(DateTime.Now.ToShortTimeString() + " " + LastJobs[a].Name + " " +
@@ -404,7 +390,7 @@ namespace Postgres_
 
         #region inserts
 
-       
+
 
         public Response ExecuteInsertManyQueries(List<string> queries, int maxSingleQueryLength = 10000)
         {
@@ -589,7 +575,7 @@ namespace Postgres_
         #region selects
 
         private Response ExecuteSelectQuery(string query)
-        {           
+        {
             List<List<string>> rows = new List<List<string>>();
             Stopwatch sw = Stopwatch.StartNew();
             Response response = new Response(false, 0);
@@ -609,7 +595,7 @@ namespace Postgres_
             }
             catch (Exception ex)
             {
-                string error = ex.Message.Replace("\n","");
+                string error = ex.Message.Replace("\n", "");
                 response.AddErrorId(AddError(error));
                 if (error.Contains("A command is already in progres"))
                 {

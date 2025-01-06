@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BDXkOUCxqX/WKQKh9jj681qVzBvwugnbUUnTjRNObG8=",
+  "Hash": "vGW82cd/E7UcVmM+e7SGU3B0YCMecVF626zJzWW0OH0=",
   "Source": "BlazorApp1",
   "BasePath": "_content/BlazorApp1",
   "Mode": "Default",
@@ -57,6 +57,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Runner\\Desktop\\Website\\topissueswebsite\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Runner\\Desktop\\Website\\topissueswebsite\\BlazorApp1\\BlazorApp1\\wwwroot\\Classes\\Database_.cs",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Runner\\Desktop\\Website\\topissueswebsite\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "BasePath": "_content/BlazorApp1",
+      "RelativePath": "Classes/Database_#[.{fingerprint}]?.cs",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rs986qqh3w",
+      "Integrity": "mzHxwviTDHgK3FkCLv51F7rV0q90j5+Itq4Swn1714A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Classes\\Database_.cs"
     },
     {
       "Identity": "C:\\Users\\Runner\\Desktop\\Website\\topissueswebsite\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
@@ -494,6 +515,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-qZq69ckbP8N1UWX8l1of8bVVoSVQjwX0Wt5WdA/6vAY="
+        }
+      ]
+    },
+    {
+      "Route": "Classes/Database_.cs",
+      "AssetFile": "C:\\Users\\Runner\\Desktop\\Website\\topissueswebsite\\BlazorApp1\\BlazorApp1\\wwwroot\\Classes\\Database_.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29000"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mzHxwviTDHgK3FkCLv51F7rV0q90j5+Itq4Swn1714A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 06 Jan 2025 12:56:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mzHxwviTDHgK3FkCLv51F7rV0q90j5+Itq4Swn1714A="
+        }
+      ]
+    },
+    {
+      "Route": "Classes/Database_.rs986qqh3w.cs",
+      "AssetFile": "C:\\Users\\Runner\\Desktop\\Website\\topissueswebsite\\BlazorApp1\\BlazorApp1\\wwwroot\\Classes\\Database_.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29000"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mzHxwviTDHgK3FkCLv51F7rV0q90j5+Itq4Swn1714A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 06 Jan 2025 12:56:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rs986qqh3w"
+        },
+        {
+          "Name": "label",
+          "Value": "Classes/Database_.cs"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mzHxwviTDHgK3FkCLv51F7rV0q90j5+Itq4Swn1714A="
         }
       ]
     },

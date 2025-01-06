@@ -1,5 +1,5 @@
 ﻿@page "/"
-@using Postgres_;
+@using BlazorApp1.wwwroot.Classes;
 
 <PageTitle>Index</PageTitle>
 
@@ -16,8 +16,7 @@ Welcome to your new app.
     Task SomeStartupTask()
     {
         string error = "";
-        bool connected = Database.Connect(ref error);
-        Response res = Database.ExecuteResetDBQuery();
+        bool connected = Database.Connect(ref error);       
         return Task.CompletedTask;
     }
 

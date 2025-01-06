@@ -85,6 +85,88 @@
       ]
     },
     {
+      "Route": "Classes/Database_.cs",
+      "AssetFile": "Classes/Database_.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29000"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mzHxwviTDHgK3FkCLv51F7rV0q90j5+Itq4Swn1714A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 06 Jan 2025 12:56:39 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mzHxwviTDHgK3FkCLv51F7rV0q90j5+Itq4Swn1714A="
+        }
+      ]
+    },
+    {
+      "Route": "Classes/Database_.rs986qqh3w.cs",
+      "AssetFile": "Classes/Database_.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29000"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mzHxwviTDHgK3FkCLv51F7rV0q90j5+Itq4Swn1714A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 06 Jan 2025 12:56:39 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rs986qqh3w"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mzHxwviTDHgK3FkCLv51F7rV0q90j5+Itq4Swn1714A="
+        },
+        {
+          "Name": "label",
+          "Value": "Classes/Database_.cs"
+        }
+      ]
+    },
+    {
       "Route": "css/bootstrap/bootstrap.min.6gzpyzhau4.css",
       "AssetFile": "css/bootstrap/bootstrap.min.css",
       "Selectors": [],

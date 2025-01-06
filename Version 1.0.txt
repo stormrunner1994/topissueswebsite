@@ -12,3 +12,7 @@ Subpages:
 	- we check if the textline only contains links, no text
 - users can upvote the links
 - only show upvotes (no downvotes possible)
+
+
+Themen:
+Rente, EU, Klimawandel, Politik/Demokratie, Energie, Migranten

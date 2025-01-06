@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS Posts;
+DROP TABLE IF EXISTS Roles;
+
+
+CREATE TABLE Users (Id SERIAL PRIMARY KEY, Email varchar(255), Nickname varchar(255), Password varchar(255), RoleId int, 
+RegisteredAt Date);
+CREATE TABLE Roles (Id SERIAL PRIMARY KEY, Name varchar(255));
+CREATE TABLE Posts (Id SERIAL PRIMARY KEY, FromUserId int, Topic varchar(255), Title varchar(255), Content Text, ReactedToPostId int,
+Likes int, Dislikes int, CreationDate Date, LastModificationDate Date);
+
+
+Insert into roles (name) values ('Masteradmin');
+Insert into roles (name) values ('Admin');
+Insert into roles (name) values ('Moderator');
+Insert into roles (name) values ('User');
