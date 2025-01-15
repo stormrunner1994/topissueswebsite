@@ -16,13 +16,19 @@
 <div class="form-group row">
     <EditForm Model="Page">
         <label>Titel: </label>
-        <InputText @bind-Value="Page.Title"></InputText>
-        <label>Inhalt: </label>
-        <InputText @bind-Value="Page.Content"></InputText>
+        <InputText style="width: 300px" @bind-Value="Page.Title"></InputText>
+        <br />
+        <label>Inhalt: </label> 
+        <br />
+        <InputTextArea style="text-align:start; width: 800px; height: 400px" @bind-Value="Page.Content"></InputTextArea>
     </EditForm>
 </div> 
 
+<br />
 <button disabled="@disabled" class="btn btn-primary" @onclick="SavePost">Posten</button>
+<br />
+<br />
+<br />
 <br />
 <button  class="btn btn-primary" @onclick="DoPetition">Starte eine neue Petition oder trete einer Petition bei</button>
 
