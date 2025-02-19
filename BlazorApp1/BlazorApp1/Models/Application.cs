@@ -10,12 +10,8 @@ namespace BlazorApp1.Models
 
         public Application()
         {
-
             string error = "";
             IsRunning = Database.Connect(ref error);
         }
-
-
-
     }
 }

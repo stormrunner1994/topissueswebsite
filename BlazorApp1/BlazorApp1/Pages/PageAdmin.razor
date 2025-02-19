@@ -1,4 +1,6 @@
 ﻿@using BlazorApp1.wwwroot.Classes;
+@using BlazorApp1.Models;
+@inject Application Application;
 @page "/pageAdmin"
 
 <PageTitle>Admin</PageTitle>
@@ -9,25 +11,11 @@
 
 @code
 {
-    private Postgres Database = new Postgres(false);
-
-    Task SomeStartupTask()
-    {
-        string error = "";
-        bool connected = Database.Connect(ref error);         
-        return Task.CompletedTask;
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-        await SomeStartupTask();
-    }
-
     private void ResetDb()
     {
         StreamReader sr = new StreamReader("Database.txt");
         string file = sr.ReadToEnd();
         file = file.Replace("\n", "").Replace("\r", "");
-        Response res = Database.ExecuteResetDBQuery(file);
+        Response res = Application.Database.ExecuteResetDBQuery(file);
     }   
 }
