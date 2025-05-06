@@ -10,8 +10,14 @@ namespace BlazorApp1.Models
 
         public Application()
         {
+            Task.Run(() => TaskConnect());
+        }
+
+        private Task TaskConnect()
+        {
             string error = "";
             IsRunning = Database.Connect(ref error);
+            return Task.CompletedTask;
         }
     }
 }
