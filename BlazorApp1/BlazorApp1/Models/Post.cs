@@ -25,7 +25,7 @@
             Likes = likes;
             Dislikes = dislikes;
             ReactedToPostId = reactedToPostId;
-                CreationDate = creationdate;
+            CreationDate = creationdate;
             LastModificationDate = lastModificationDate;
         }
     }
